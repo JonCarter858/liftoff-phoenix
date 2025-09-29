@@ -41,16 +41,23 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             align-items: center;
         }
 
-        .header-left {
+        .header-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+            justify-content: center;
+        }
+
+        .header-buttons .cta-button {
+            flex: 1;
+            max-width: 280px;
         }
 
         .header-logo {
@@ -486,17 +493,16 @@
 
         @media (max-width: 968px) {
             .header-content {
-                grid-template-columns: 1fr;
-                text-align: center;
                 gap: 15px;
             }
             
-            .header-left {
-                align-items: center;
+            .header-buttons {
+                flex-direction: column;
+                max-width: 100%;
             }
             
-            .header-logo {
-                padding: 0;
+            .header-buttons .cta-button {
+                max-width: 100%;
             }
 
             .hero-intro h1 {
@@ -521,28 +527,35 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .signature-content {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            
+            .signature-content img[alt="Bill Rodriguez"] {
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 <body>
     <header class="personal-header">
         <div class="header-content">
-            <div class="header-left">
-                <a href="https://unitytickets.com/se/FRANCHISEPHXF2025/TICKET/en-CA/start/process.aspx?ut_SGU=CFD64DBD-3B22-45CC-B7DA-F4CFC581454A&ut_CPG=EF98FB8D-057E-40E0-B009-0716C166E310&ut_CST=766A75D7-12C0-40BF-99C9-323D3F742A25&utm_discount=FREEPASS25" 
-                   class="cta-button" 
-                   target="_blank">
-                    Get Your Free Ticket!
-                </a>
-                <p class="event-info">
-                    Phoenix Convention Center • Oct 18-19 • Booth 315
-                </p>
-            </div>
-            
             <div class="header-logo">
                 <h1>Considering Business Ownership?</h1>
             </div>
             
-            <a href="#connect" class="cta-button secondary">Let's Connect</a>
+            <div class="header-buttons">
+                <a href="#connect" class="cta-button">
+                    Get Your Free Ticket!
+                </a>
+                <a href="#connect" class="cta-button secondary">Let's Connect</a>
+            </div>
+            
+            <p class="event-info">
+                Phoenix Convention Center • Oct 18-19 • Booth 315
+            </p>
         </div>
     </header>
 
@@ -640,18 +653,6 @@
                             <p style="margin-top: 20px; font-weight: bold; color: #0056b3;">— Ben Cowan, Multi-Brand Franchisee, Franchisee of the Year</p>
                         </div>
                     </div>
-
-                    <div class="testimonial-quote">
-                        <img src="https://i.imgur.com/y9AZOLR.png" 
-                             alt="Jen & Matt Rhodes" 
-                             class="testimonial-photo">
-                        <div class="testimonial-content">
-                            <p style="font-size: 18px; color: #333; line-height: 1.6; font-style: italic; margin: 0;">
-                                "Bill took us from aspiring investors to franchise business owners, and over a decade later we still love what we do. You too will love Bill's professionalism, know-how and can-do attitude."
-                            </p>
-                            <p style="margin-top: 20px; font-weight: bold; color: #0056b3;">— Jen & Matt Rhodes, Multi-Unit Franchisees</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -680,12 +681,28 @@
             
             <div class="workshop-cards">
                 <div class="workshop-card">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+                        <iframe 
+                            src="https://www.youtube.com/embed/9MNYt6hw-wQ" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                     <div class="workshop-time">SAT 12:45 PM</div>
                     <h3>Finding Your Ideal Franchise</h3>
                     <p>Saturday, October 18 at 12:45 PM</p>
                     <p style="margin-top: 10px; opacity: 0.9;">I'll show you exactly how to match your skills and goals with the right business</p>
                 </div>
                 <div class="workshop-card">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+                        <iframe 
+                            src="https://www.youtube.com/embed/gz3VhYMdDRw" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                     <div class="workshop-time">SUN 2:15 PM</div>
                     <h3>Real Talk with Franchise Owners</h3>
                     <p>Sunday, October 19 at 2:15 PM</p>
@@ -773,14 +790,6 @@
                     <input type="hidden" name="event" value="Phoenix Convention Center Oct 18-19">
 
                     <button type="submit" class="submit-btn">Contact Me</button>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <a href="https://calendly.com/liftoff-with-bill" 
-                           target="_blank" 
-                           style="color: #0056b3; text-decoration: none; font-size: 16px; border: 2px solid #0056b3; padding: 12px 24px; border-radius: 25px; display: inline-block;">
-                            Book a 15-Minute Chat
-                        </a>
-                    </div>
                 </form>
             </div>
         </div>
@@ -788,15 +797,19 @@
 
     <section class="signature-section">
         <div class="container">
-            <div class="signature-content">
-                <p><strong>My Promise:</strong> I'll never pressure you. I'll always be honest about whether franchising makes sense for you. And if we work together, you'll never pay me a dime — the franchisors compensate me only if you decide to invest.</p>
-                <p>Looking forward to meeting you in Phoenix!</p>
-                
-                <div class="signature">Bill Rodriguez</div>
-                <p style="color: #888; font-size: 14px; margin-top: 10px;">
-                    Founder & CEO, Liftoff! Certified Franchise Consultants<br>
-                    International Franchise Professionals Group (IFPG)
-                </p>
+            <div class="signature-content" style="display: flex; gap: 30px; align-items: center; max-width: 800px; text-align: left;">
+                <img src="https://i.imgur.com/XFbDFc5.jpeg" 
+                     alt="Bill Rodriguez" 
+                     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid #0056b3;">
+                <div style="flex: 1;">
+                    <p style="font-size: 18px; color: #555; margin-bottom: 20px; line-height: 1.8;"><strong>My Promise:</strong> I'll never pressure you. I'll always be honest about whether franchising makes sense for you. And if we work together, you'll never pay me a dime — the franchisors compensate me only if you decide to invest.</p>
+                    <p style="font-size: 18px; color: #555; margin-bottom: 20px;">Looking forward to meeting you in Phoenix!</p>
+                    
+                    <img src="https://i.imgur.com/HB6mqRk.png" alt="Bill Rodriguez Signature" style="max-width: 250px; height: auto; margin: 10px 0;">
+                    <p style="color: #888; font-size: 14px; margin-top: 10px;">
+                        Founder & CEO, Liftoff! Certified Franchise Consultants
+                    </p>
+                </div>
             </div>
         </div>
     </section>
