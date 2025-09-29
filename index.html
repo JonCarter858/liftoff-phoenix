@@ -42,9 +42,15 @@
             margin: 0 auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 280px 1fr 180px;
+            grid-template-columns: auto 1fr auto;
             gap: 30px;
             align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .header-logo {
@@ -71,6 +77,8 @@
             box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
             display: inline-block;
             line-height: 1.3;
+            text-align: center;
+            white-space: nowrap;
         }
 
         .cta-button:hover {
@@ -82,7 +90,13 @@
             background: white;
             color: #0056b3;
             border: 2px solid white;
-            white-space: nowrap;
+        }
+
+        .event-info {
+            font-size: 11px;
+            color: white;
+            opacity: 0.95;
+            text-align: center;
         }
 
         .hero {
@@ -218,9 +232,15 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            object-fit: cover;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
             flex-shrink: 0;
             border: 3px solid #ff9800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
         }
 
         .testimonial-content {
@@ -471,8 +491,8 @@
                 gap: 15px;
             }
             
-            .header-content > div:first-child {
-                text-align: center !important;
+            .header-left {
+                align-items: center;
             }
             
             .header-logo {
@@ -501,29 +521,25 @@
                 flex-direction: column;
                 text-align: center;
             }
-
-            .testimonial-photo {
-                margin: 0 auto;
-            }
         }
     </style>
 </head>
 <body>
     <header class="personal-header">
         <div class="header-content">
-            <div style="text-align: left;">
+            <div class="header-left">
                 <a href="https://unitytickets.com/se/FRANCHISEPHXF2025/TICKET/en-CA/start/process.aspx?ut_SGU=CFD64DBD-3B22-45CC-B7DA-F4CFC581454A&ut_CPG=EF98FB8D-057E-40E0-B009-0716C166E310&ut_CST=766A75D7-12C0-40BF-99C9-323D3F742A25&utm_discount=FREEPASS25" 
                    class="cta-button" 
                    target="_blank">
-                    Get Your Free Ticket to the Phoenix Franchise Show!
+                    Get Your Free Ticket!
                 </a>
-                <p style="margin: 10px 0 0 0; font-size: 11px; color: white;">
+                <p class="event-info">
                     Phoenix Convention Center • Oct 18-19 • Booth 315
                 </p>
             </div>
             
             <div class="header-logo">
-                <h1 style="font-size: 28px; margin: 0; font-weight: bold;">Considering Business Ownership?</h1>
+                <h1>Considering Business Ownership?</h1>
             </div>
             
             <a href="#connect" class="cta-button secondary">Let's Connect</a>
@@ -602,7 +618,7 @@
                 
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div class="testimonial-quote">
-                        <img src="data:image/jpeg;base64,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" 
+                        <img src="https://i.imgur.com/TWc8HYI.png" 
                              alt="Gary Findley" 
                              class="testimonial-photo">
                         <div class="testimonial-content">
@@ -614,7 +630,7 @@
                     </div>
                     
                     <div class="testimonial-quote">
-                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABkAGQDASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAAMBAgQFBgf/xAAwEAABBAEDAgQFAwQDAAAAAAABAAIDBBEhBRIxQVEGE2FxIoGRocEysdEjM0LhFBXw/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIREBAQEBAAICAQUAAAAAAAAAAAECEQMhEjFBURMEYYGh/9oADAMBAAIRAxEAPwDvXLu1iPJXgk8q+pVJrF2KCP8AcErRy89f6SjlY9cKrntYwve4Na0ZJKwQXPxC1dIq08ccFqAytpx7zIAO/wB+Ogz1xnopfq8rLcFPRGtngswTtntnl1eJwcW/8lIJVyoTQ7o9rjG9kTWxsjbhrWjAA9AFQ6nEYYrETTLBIM9Pyz/aVfqX7dGoqe25lSOzYHe5rDwe85DW/wBjJ+gyo5V9tPz66/qEpW17UYPJl7LUQ/MQfcqjNbpPsupMlbvH0Xk9qjgVnXXnfyXTl6ejO/H2HV/U/wDaWIbENmIZcQSWuI5BSXZCxeNQHaoNhyCMELn1uPUvyT/HK7eejktTTVbBdPrUtdWWXGSRgubWuRW2buUjVNt+NrLW7XHhjePMjd35Cx09jlnbUvSweTv2uKe+PchCzdcZjf2r0a1Y0W3Qc5tjqwZIPoeR7LqVfEVmfTp2Wo4fOZI4CJ5JaW/5M7QeRnHr9VLqX6rjvaz51PqEVJ1ORlgPkvSu8rPlgNjGB/kdx/Y+6n/4+6d8ry+zbkfI9zn5P5nDn+3r+y4eoRTQ2H1C0mWKRsLw3J7twCMAew/OV6X/AFPUGxT1jVuyVnkObJNA+J2OODgZGPuslvfE7l3Tp6PSqWpW5zMxz4a0fh1j1l3b9GkA/wBro/8Ag6JFUFeSvTjjMhaRvcSW4ySSD7qvhZrmskqNP+NeYP8AJ3/C9MpzTXvXcz6vN89a96+CdPbY0+3YFOZl51gMkkkAD2jaMn35VPBLQdQuStMDXeS6bfJnHnycH4Rn2K3eEaflaW1zjlzsn81u8PVG1tEpwsA6hn/A5W2N3OO2c9fKe+nXv2hUY7cQULM65p87u55Cw2tcsR05r8N2UMjBEsEBc+RgH+TsA4x1GT7IQp71H+Pk/jPxHDr2qSG+C9u7Ywc8K9b/ALepvppXGpVpxptZsBAc4Ah3Uk+o/lcxCANmuxPp0dWkHvbY/dv7ew9R7rL/ANJQOuxLPU1C7DXNWa3ZLmjsPgZhvsqIXWdPmVtj2/hPxM7xNdtMfXZDHXZE6LdnzGljuS4HkdP2XW8FuOoSO1OM5FZ+YyMcH+VCF1/O4PfOXD1nCn6FqFOkBXe6rG0Zxq1WaOJ3+JMnP3Gf3Uzav5Nl1S9C6vM38WB3f6hCFlfdWs6WPcvQu01ljSY9Rq/E2YbnF3dnH/yufA2zdrRQNfRdC0hpkkfvLRknn7e6FC1+Ld8rZ/jda9GI66/gaCWtrd95bhs2m4Ye0cv/AKUoQtFLy//Z" 
+                        <img src="https://i.imgur.com/CF0yfAM.png" 
                              alt="Ben Cowan" 
                              class="testimonial-photo">
                         <div class="testimonial-content">
@@ -626,7 +642,7 @@
                     </div>
 
                     <div class="testimonial-quote">
-                        <img src="data:image/jpeg;base64,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" 
+                        <img src="https://i.imgur.com/y9AZOLR.png" 
                              alt="Jen & Matt Rhodes" 
                              class="testimonial-photo">
                         <div class="testimonial-content">
